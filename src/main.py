@@ -2,7 +2,7 @@ from db_manager import DatabaseManager
 db = DatabaseManager()
 db.create_tables()
 
-def menu_departments():
+def menu_departments(): # Меню управления отделами
     print("\n=== Меню отделов ===")
     print("1. Создать отдел")
     print("2. Показать отдел")
@@ -37,7 +37,7 @@ def menu_departments():
         print("Отдел удален.")
 
 
-def menu_positions():
+def menu_positions(): # Меню управления должностями
     print("\n=== Меню должностей ===")
     print("1. Создать должность")
     print("2. Показать должность")
@@ -81,7 +81,7 @@ def menu_positions():
         print("Должность удалена.")
 
 
-def menu_employees():
+def menu_employees(): # Меню управления сотрудниками
     print("\n=== Меню сотрудников ===")
     print("1. Создать сотрудника")
     print("2. Показать сотрудника")
@@ -132,7 +132,7 @@ def menu_employees():
         print("Сотрудник удален.")
 
 
-def menu_projects():
+def menu_projects(): # Меню управления проектами
     print("\n=== Меню проектов ===")
     print("1. Создать проект")
     print("2. Показать проект")
@@ -173,7 +173,7 @@ def menu_projects():
     elif choice == "6":
         emp_id = int(input("ID сотрудника: "))
         proj_id = int(input("ID проекта: "))
-        db.add_employee_to_project(emp_id, proj_id)
+        db.assign_employee_to_project(emp_id, proj_id)
         print("Сотрудник добавлен в проект.")
 
     elif choice == "7":
@@ -181,7 +181,7 @@ def menu_projects():
         print(db.get_employees_in_project(proj_id))
 
 
-def main_menu():
+def main_menu(): # Главное меню приложения
     while True:
         print("\n=== HR SYSTEM ===")
         print("1. Отделы")
